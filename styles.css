@@ -57,8 +57,31 @@ p{color:#c8c8d0;margin:0}
 }
 .brand strong{display:block;font-size:18px}
 .brand small{display:block;color:var(--muted);font-size:12px;margin-top:-2px}
-.menu{display:flex;align-items:center;gap:22px;margin:0;padding:0;list-style:none}
+.menu{display:flex;align-items:center;gap:14px;margin:0;padding:0;list-style:none}
+.menu>li{position:relative}
 .menu a{font-size:14px;color:#dedee3}
+.menu>li>a:not(.cta-pill){display:flex;align-items:center;min-height:44px;padding:0 6px}
+.has-submenu>a::after{content:"";width:6px;height:6px;margin-left:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.7}
+.submenu{
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:218px;
+  margin:0;
+  padding:10px;
+  list-style:none;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#15151d;
+  box-shadow:0 20px 50px rgba(0,0,0,.34);
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(8px);
+  transition:opacity .18s ease,transform .18s ease,visibility .18s ease;
+}
+.has-submenu:hover .submenu,.has-submenu:focus-within .submenu{opacity:1;visibility:visible;transform:none}
+.submenu a{display:block;padding:10px 11px;border-radius:6px;color:#d8d8df;white-space:nowrap}
+.submenu a:hover{background:rgba(255,255,255,.06);color:#fff}
 .cta-pill{
   display:inline-flex;
   align-items:center;
@@ -231,6 +254,10 @@ details p{padding:0 22px 22px}
   .menu{position:absolute;left:16px;right:16px;top:76px;display:none;flex-direction:column;align-items:stretch;gap:0;padding:14px;background:#15151d;border:1px solid var(--line);border-radius:8px}
   .menu.open{display:flex}
   .menu a{display:block;padding:13px 10px}
+  .menu>li>a:not(.cta-pill){min-height:auto;padding:13px 10px}
+  .has-submenu>a::after{float:right;margin-top:6px}
+  .submenu{position:static;min-width:0;padding:0 0 8px 12px;border:0;background:transparent;box-shadow:none;opacity:1;visibility:visible;transform:none}
+  .submenu a{padding:9px 10px;color:var(--muted)}
   .hero-inner{grid-template-columns:1fr}
   .hero-visual{min-height:460px}
   .area-grid,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
