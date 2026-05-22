@@ -699,12 +699,112 @@ summary span{color:var(--gold);font-weight:950}
 .cta-band{padding:92px 24px;background:var(--grad-soft);border-top:1px solid var(--line)}
 .cta-inner{max-width:960px;margin:0 auto;text-align:center}
 .cta-inner h2{font-size:clamp(32px,4vw,52px);margin:12px 0 28px}
-.site-footer{border-top:1px solid var(--line);background:#09090c}
-.footer-wrap{max-width:1240px;margin:0 auto;padding:54px 24px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
-.footer-wrap h3{font-size:15px;margin-bottom:12px}
-.footer-wrap p,.footer-wrap a{font-size:13.5px;color:#b9b9c2}
-.footer-bottom{max-width:1240px;margin:0 auto;padding:20px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.footer-bottom p{font-size:12px;color:var(--dim)}
+.site-footer{
+  border-top:1px solid rgba(230,200,135,.2);
+  background:
+    radial-gradient(circle at 18% 0,rgba(230,200,135,.08),transparent 28%),
+    linear-gradient(180deg,#0b0b0f 0%,#060608 100%);
+}
+.footer-wrap{
+  max-width:1240px;
+  margin:0 auto;
+  padding:58px 24px 44px;
+  display:grid;
+  grid-template-columns:1.15fr 1.25fr 1fr;
+  gap:34px;
+  align-items:start;
+}
+.premium-footer h3{
+  font-size:13px;
+  margin:0 0 14px;
+  color:var(--gold);
+  font-weight:900;
+}
+.footer-company,.footer-legal,.footer-links>div{
+  min-width:0;
+}
+.footer-brand{
+  display:inline-flex;
+  margin-bottom:18px;
+}
+.footer-intro{
+  max-width:420px;
+  margin:0 0 18px;
+  font-size:14px;
+  line-height:1.8;
+  color:#c8c8d0;
+}
+.footer-call{
+  display:inline-flex;
+  min-height:42px;
+  align-items:center;
+  justify-content:center;
+  padding:0 16px;
+  border-radius:8px;
+  background:var(--grad);
+  color:#141016;
+  font-size:14px;
+  font-weight:900;
+  box-shadow:0 16px 36px rgba(201,138,107,.16);
+}
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+.footer-links a{
+  display:block;
+  padding:5px 0;
+  color:#c9c9d1;
+  font-size:13.5px;
+  line-height:1.45;
+}
+.footer-links a:hover,.footer-bottom a:hover{
+  color:#f2d796;
+}
+.footer-legal{
+  padding:20px;
+  border:1px solid rgba(230,200,135,.18);
+  border-radius:10px;
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+}
+.footer-legal dl{
+  display:grid;
+  gap:10px;
+  margin:0;
+}
+.footer-legal div{
+  display:grid;
+  grid-template-columns:108px minmax(0,1fr);
+  gap:12px;
+  align-items:start;
+}
+.footer-legal dt{
+  color:#a8a8b2;
+  font-size:12px;
+  font-weight:800;
+}
+.footer-legal dd{
+  margin:0;
+  color:#ededf2;
+  font-size:13px;
+  line-height:1.55;
+  word-break:keep-all;
+}
+.footer-bottom{
+  max-width:1240px;
+  margin:0 auto;
+  padding:20px 24px 24px;
+  border-top:1px solid rgba(230,200,135,.14);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.footer-bottom p,.footer-bottom a{
+  font-size:12px;
+  color:var(--dim);
+}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
 .reveal.in{opacity:1;transform:none}
 #area,#process,#notice,#faq,.cta-band,.site-footer{content-visibility:auto;contain-intrinsic-size:auto 700px}
@@ -722,6 +822,7 @@ summary span{color:var(--gold);font-weight:950}
   .area-grid,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
   .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-wrap{grid-template-columns:1fr}
 }
 @media(max-width:720px){
   .nav{min-height:68px;padding:0 16px}
@@ -734,6 +835,10 @@ summary span{color:var(--gold);font-weight:950}
   .floating{display:none}
   .glass-card{margin:0;padding:20px}
   .cards,.area-grid,.steps,.notice-grid,.footer-wrap{grid-template-columns:1fr}
+  .footer-links{grid-template-columns:1fr;gap:18px}
+  .footer-wrap{padding:44px 18px 34px}
+  .footer-legal{padding:18px}
+  .footer-legal div{grid-template-columns:1fr;gap:3px}
   .pricing-grid{grid-template-columns:1fr}
   .blog-grid{grid-template-columns:1fr}
   .article-hero{padding:24px}
