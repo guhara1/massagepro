@@ -507,6 +507,41 @@ summary span{color:var(--gold);font-weight:950}
     linear-gradient(135deg,#15131a,#0d0d12);
   box-shadow:0 24px 72px rgba(0,0,0,.3);
 }
+.region-panel h2{
+  font-size:28px;
+  margin:0 0 12px;
+  font-weight:950;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.region-price{max-width:1240px;margin-top:26px}
+.region-price .pricing-grid{margin:24px 0 0}
+.price-note{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-top:18px;
+  padding:18px;
+  border-radius:10px;
+  border:1px solid rgba(230,200,135,.16);
+  background:rgba(0,0,0,.18);
+}
+.price-note p{font-size:14px;color:#d8d8e0}
+.price-note a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:0 16px;
+  border-radius:999px;
+  background:var(--grad);
+  color:#151015;
+  font-weight:950;
+  white-space:nowrap;
+}
 .region-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
 .region-grid a,.region-chip{
   min-height:48px;
@@ -579,6 +614,8 @@ summary span{color:var(--gold);font-weight:950}
   .hero-call{width:100%}
   .internal-link-grid{grid-template-columns:1fr}
   .region-grid,.district-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .price-note{display:block}
+  .price-note a{width:100%;margin-top:14px}
   .expert-panel{grid-template-columns:1fr;padding:22px}
   .wrap{padding:78px 18px}
   .note-card{padding:22px;gap:16px}
