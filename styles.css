@@ -630,6 +630,7 @@ summary span{color:var(--gold);font-weight:950}
 }
 .dong-result{
   margin-top:18px;
+  scroll-margin-top:96px;
   padding:22px;
   border-radius:12px;
   border:1px solid rgba(230,200,135,.17);

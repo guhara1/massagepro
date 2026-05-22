@@ -58,7 +58,7 @@
       return data[name]&&data[name].slug?data[name].slug:encodeURIComponent(name);
     }
 
-    function render(name){
+    function render(name, shouldScroll){
       var dongs=getItems(name);
       resultTitle.textContent=name+" 출장마사지 통합 행정동";
       resultDesc.textContent="숫자로 나뉜 1동, 2동, 3동은 하나의 동 이름으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
@@ -79,13 +79,16 @@
       actions.querySelectorAll("button,a").forEach(function(btn){
         btn.classList.toggle("active",btn.getAttribute("data-district")===name);
       });
+      if(shouldScroll){
+        result.scrollIntoView({behavior:"smooth",block:"start"});
+      }
     }
 
     function bindAction(el,name){
       el.setAttribute("data-district",name);
       el.addEventListener("click",function(event){
         event.preventDefault();
-        render(name);
+        render(name,true);
       });
     }
 
@@ -113,6 +116,6 @@
       }
     });
 
-    if(districts.length){render(districts[0]);}
+    if(districts.length){render(districts[0],false);}
   });
 })();
