@@ -194,9 +194,9 @@ for (const city of enhancedCities) {
 }
 
 const grid = enhancedCities.map(city => `<a href="/locations/gyeonggi/${city.slug}/">${city.name}</a>`).join("");
-const indexSection = `<section class="region-panel" id="districts" data-dong-explorer data-source="gyeonggi-zone-data" data-link-prefix="/locations/gyeonggi/" data-item-label="세부 지역" data-title-template="{name} 출장마사지 세부 지역" data-desc-template="시군을 선택하면 해당 지역의 행정구 또는 주요 읍면동 생활권이 표시됩니다. 각 항목은 개별 SEO 랜딩 페이지로 연결됩니다." data-page-link-label="{name} 전체 지역 페이지 바로가기">
+const indexSection = `<section class="region-panel" id="districts" data-dong-explorer data-source="gyeonggi-zone-data" data-link-prefix="/locations/gyeonggi/" data-item-label="세부 지역" data-title-template="{name} 출장마사지 세부 지역" data-desc-template="시군을 선택하면 예약 상담에 참고할 행정구와 주요 생활권을 확인할 수 있습니다. 원하는 지역을 눌러 가능 시간과 상담 기준을 자세히 살펴보세요." data-page-link-label="{name} 전체 지역 페이지 바로가기">
         <h2>경기 출장마사지 가능 지역 31개 시군</h2>
-        <p>아래 시군을 선택하면 행정구가 있는 지역은 구 단위로, 행정구가 없는 지역은 예약 상담에 필요한 주요 읍·면·동 생활권으로 나뉘어 표시됩니다. 각 세부 지역은 개별 랜딩 페이지로 연결됩니다.</p>
+        <p>아래 시군을 선택하면 행정구가 있는 지역은 구 단위로, 행정구가 없는 지역은 예약 상담에 필요한 주요 읍·면·동 생활권으로 나누어 확인할 수 있습니다. 원하는 세부 지역을 선택해 가능 시간과 상담 기준을 살펴보세요.</p>
         <div class="district-grid" data-dong-actions>${grid}</div>
         <div class="dong-result" hidden>
           <h3 data-dong-title></h3>
