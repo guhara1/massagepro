@@ -49,6 +49,10 @@
     try{data=JSON.parse(source.textContent||"{}");}catch(e){return;}
     var districts=Object.keys(data);
     var prefix=explorer.getAttribute("data-link-prefix")||"";
+    var itemLabel=explorer.getAttribute("data-item-label")||"통합 행정동";
+    var titleTemplate=explorer.getAttribute("data-title-template")||"{name} 출장마사지 통합 행정동";
+    var descTemplate=explorer.getAttribute("data-desc-template")||"숫자로 나뉜 1동, 2동, 3동은 하나의 동 이름으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
+    var pageLinkTemplate=explorer.getAttribute("data-page-link-label")||"{name} 지역 페이지 바로가기";
 
     function getItems(name){
       return Array.isArray(data[name])?data[name]:(data[name]&&data[name].dongs?data[name].dongs:[]);
@@ -69,8 +73,8 @@
     function render(name, shouldScroll){
       var dongs=getItems(name);
       var districtSlug=getSlug(name);
-      resultTitle.textContent=name+" 출장마사지 통합 행정동";
-      resultDesc.textContent="숫자로 나뉜 1동, 2동, 3동은 하나의 동 이름으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
+      resultTitle.textContent=titleTemplate.replace("{name}",name).replace("{label}",itemLabel);
+      resultDesc.textContent=descTemplate.replace("{name}",name).replace("{label}",itemLabel);
       resultList.innerHTML="";
       dongs.forEach(function(dong){
         var dongName=getDongName(dong);
@@ -80,7 +84,7 @@
         if(prefix&&dongSlug){
           chip.className="dong-chip-link";
           chip.href=prefix+districtSlug+"/"+dongSlug+"/";
-          chip.setAttribute("aria-label",dongName+" 출장마사지 지역 페이지로 이동");
+          chip.setAttribute("aria-label",dongName+" 출장마사지 "+itemLabel+" 페이지로 이동");
         }
         resultList.appendChild(chip);
       });
@@ -88,7 +92,7 @@
         var pageLink=document.createElement("a");
         pageLink.className="dong-page-link";
         pageLink.href=prefix+districtSlug+"/";
-        pageLink.textContent=name+" 지역 페이지 바로가기";
+        pageLink.textContent=pageLinkTemplate.replace("{name}",name).replace("{label}",itemLabel);
         resultList.appendChild(pageLink);
       }
       result.hidden=false;
