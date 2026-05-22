@@ -62,7 +62,10 @@
       if(data[name]&&Object.prototype.hasOwnProperty.call(data[name],"slug")){
         return data[name].slug;
       }
-      return encodeURIComponent(name);
+      return String(name||"")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g,"-")
+        .replace(/^-+|-+$/g,"")||"area";
     }
 
     function getDongName(item){
