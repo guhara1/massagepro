@@ -568,6 +568,45 @@ summary span{color:var(--gold);font-weight:950}
   font-weight:750;
   text-align:center;
 }
+.dong-explorer{margin-top:22px}
+.dong-actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:16px}
+.dong-actions button{
+  min-height:46px;
+  border:1px solid rgba(230,200,135,.15);
+  border-radius:8px;
+  background:rgba(255,255,255,.032);
+  color:#f2f2f5;
+  font:inherit;
+  font-size:14px;
+  font-weight:850;
+  cursor:pointer;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease,color .2s ease;
+}
+.dong-actions button:hover,.dong-actions button.active{
+  transform:translateY(-2px);
+  border-color:rgba(230,200,135,.46);
+  background:linear-gradient(135deg,rgba(230,200,135,.18),rgba(255,255,255,.035));
+  color:#fff3cf;
+}
+.dong-result{
+  margin-top:18px;
+  padding:22px;
+  border-radius:12px;
+  border:1px solid rgba(230,200,135,.17);
+  background:linear-gradient(135deg,rgba(0,0,0,.22),rgba(255,255,255,.026));
+}
+.dong-result h3{font-size:22px;margin-bottom:8px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dong-result p{font-size:14.5px;color:#d3d3dc;margin-bottom:14px}
+.dong-chip-grid{display:flex;flex-wrap:wrap;gap:8px}
+.dong-chip-grid span{
+  padding:9px 12px;
+  border-radius:999px;
+  border:1px solid rgba(230,200,135,.14);
+  background:rgba(255,255,255,.035);
+  color:#eeeef4;
+  font-size:13.5px;
+  font-weight:760;
+}
 .source-note{margin-top:18px;color:var(--muted);font-size:13px;line-height:1.7}
 .cta-band{padding:92px 24px;background:var(--grad-soft);border-top:1px solid var(--line)}
 .cta-inner{max-width:960px;margin:0 auto;text-align:center}
@@ -614,6 +653,7 @@ summary span{color:var(--gold);font-weight:950}
   .hero-call{width:100%}
   .internal-link-grid{grid-template-columns:1fr}
   .region-grid,.district-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dong-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
   .price-note{display:block}
   .price-note a{width:100%;margin-top:14px}
   .expert-panel{grid-template-columns:1fr;padding:22px}

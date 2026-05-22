@@ -27,6 +27,16 @@
         <div class="district-grid"><span>강남구</span><span>강동구</span><span>강북구</span><span>강서구</span><span>관악구</span><span>광진구</span><span>구로구</span><span>금천구</span><span>노원구</span><span>도봉구</span><span>동대문구</span><span>동작구</span><span>마포구</span><span>서대문구</span><span>서초구</span><span>성동구</span><span>성북구</span><span>송파구</span><span>양천구</span><span>영등포구</span><span>용산구</span><span>은평구</span><span>종로구</span><span>중구</span><span>중랑구</span></div>
         <p class="source-note">서울시는 25개 전 자치구 단위로 행정 서비스와 지역 생활권을 운영합니다. 참고: <a href="https://news.seoul.go.kr/economy/archives/570768">서울특별시 자치구 안내 자료</a></p>
       </div>
+      <section class="region-panel dong-explorer" data-dong-explorer data-source="seoul-dong-data">
+        <h2>서울 출장마사지 행정동 바로 확인</h2>
+        <p>자치구를 클릭하면 예약 상담에 참고할 행정동이 표시됩니다. `1동·2동·3동`처럼 숫자로 나뉜 행정동은 사용자가 찾기 쉽도록 하나의 동 이름으로 통합했습니다.</p>
+        <div class="dong-actions" data-dong-actions aria-label="서울 자치구 선택"></div>
+        <div class="dong-result" aria-live="polite">
+          <h3 data-dong-title>서울 행정동</h3>
+          <p data-dong-desc>자치구를 선택하면 행정동이 표시됩니다.</p>
+          <div class="dong-chip-grid" data-dong-list></div>
+        </div>
+      </section>
       <section class="region-panel region-price" id="pricing"><h2>서울 출장마사지 가격표</h2><p>서울 전 자치구 예약 상담 시 참고할 수 있는 기본 요금표입니다. 최종 가능 여부와 금액은 시간대, 세부 위치, 코스 조건에 따라 전화 상담에서 확인합니다.</p><div class="pricing-grid" aria-label="서울 출장마사지 가격표"><article class="price-card"><p class="kicker">DRY · 건식</p><h2>타이 건식</h2><p>오일 없이 스트레칭과 압 중심으로 구성되는 기본 건식 케어입니다.</p><div class="price-rows"><div><span>60분</span><strong>80,000원</strong></div><div><span>90분</span><strong>100,000원</strong></div><div><span>120분</span><strong>120,000원</strong></div></div></article><article class="price-card"><p class="kicker">WET · 오일</p><h2>아로마 습식</h2><p>부드러운 오일 케어를 중심으로 휴식감을 높이는 코스입니다.</p><div class="price-rows"><div><span>60분</span><strong>90,000원</strong></div><div><span>90분</span><strong>110,000원</strong></div><div><span>120분</span><strong>130,000원</strong></div></div></article><article class="price-card"><p class="kicker">SIGNATURE · 오일</p><h2>감성케어 오일</h2><p>차분한 리듬과 섬세한 압 조절을 중시하는 오일 케어입니다.</p><div class="price-rows"><div><span>60분</span><strong>100,000원</strong></div><div><span>90분</span><strong>120,000원</strong></div><div><span>120분</span><strong>140,000원</strong></div></div></article><article class="price-card best"><span class="best-badge">BEST</span><p class="kicker">VVIP · 풀바디</p><h2>VVIP 전신케어</h2><p>건식과 오일 케어를 함께 고려하는 장시간 전신 코스입니다.</p><div class="price-rows"><div><span>60분</span><strong>110,000원</strong></div><div><span>90분</span><strong>130,000원</strong></div><div><span>120분</span><strong>150,000원</strong></div><div><span>150분</span><strong>180,000원</strong></div></div></article><article class="price-card"><p class="kicker">KOREAN · 매니저 지정</p><h2>한국인 스웨디시</h2><p>한국인 매니저 지정 상담이 필요한 경우 안내되는 코스입니다.</p><div class="price-rows"><div><span>60분</span><strong>150,000원</strong></div><div><span>90분</span><strong>190,000원</strong></div></div></article><article class="price-card"><p class="kicker">MEN · 남성 전용</p><h2>남성 스웨디시</h2><p>남성 고객 전용 상담 코스입니다. 선호 강도와 가능 시간대를 확인합니다.</p><div class="price-rows"><div><span>60분</span><strong>100,000원</strong></div><div><span>90분</span><strong>130,000원</strong></div><div><span>120분</span><strong>160,000원</strong></div></div></article></div><div class="price-note"><p>서울 지역은 시간대별 문의가 몰릴 수 있습니다. 전화로 현재 가능 시간과 최종 금액을 바로 확인하세요.</p><a href="tel:05082024731">0508-202-4731 요금 상담</a></div></section>
       <div class="content-stack" style="margin-top:26px">
         <article id="guide" class="content-block">
@@ -69,6 +79,33 @@
     </section>
   </main>
   <footer class="site-footer"><div class="footer-bottom"><p>상호: 마사지PRO · 예약전화: 0508-202-4731</p><p><a href="/locations/">지역별 찾기</a></p></div></footer>
+  <script type="application/json" id="seoul-dong-data">{
+    "강남구":["개포동","논현동","대치동","도곡동","삼성동","세곡동","수서동","신사동","압구정동","역삼동","일원동","청담동"],
+    "강동구":["강일동","고덕동","길동","둔촌동","명일동","상일동","성내동","암사동","천호동"],
+    "강북구":["미아동","번동","삼각산동","삼양동","송중동","송천동","수유동","우이동","인수동"],
+    "강서구":["가양동","공항동","등촌동","발산동","방화동","염창동","우장산동","화곡동"],
+    "관악구":["낙성대동","난곡동","난향동","남현동","대학동","미성동","보라매동","삼성동","서림동","서원동","성현동","신림동","신사동","신원동","은천동","인헌동","조원동","중앙동","청룡동","청림동","행운동"],
+    "광진구":["광장동","구의동","군자동","능동","자양동","중곡동","화양동"],
+    "구로구":["가리봉동","개봉동","고척동","구로동","수궁동","신도림동","오류동","항동"],
+    "금천구":["가산동","독산동","시흥동"],
+    "노원구":["공릉동","상계동","월계동","중계동","하계동"],
+    "도봉구":["도봉동","방학동","쌍문동","창동"],
+    "동대문구":["답십리동","용신동","이문동","장안동","전농동","제기동","청량리동","회기동","휘경동"],
+    "동작구":["노량진동","대방동","사당동","상도동","신대방동","흑석동"],
+    "마포구":["공덕동","대흥동","도화동","망원동","상암동","서강동","서교동","성산동","신수동","아현동","연남동","염리동","용강동","합정동"],
+    "서대문구":["남가좌동","북가좌동","북아현동","신촌동","연희동","천연동","충현동","홍은동","홍제동"],
+    "서초구":["내곡동","반포동","방배동","서초동","양재동","잠원동"],
+    "성동구":["금호동","마장동","사근동","성수동","송정동","옥수동","왕십리동","용답동","응봉동","행당동"],
+    "성북구":["길음동","돈암동","동선동","보문동","삼선동","석관동","성북동","안암동","월곡동","장위동","정릉동","종암동"],
+    "송파구":["가락동","거여동","마천동","문정동","방이동","삼전동","석촌동","송파동","오금동","오륜동","위례동","잠실동","장지동","풍납동"],
+    "양천구":["목동","신월동","신정동"],
+    "영등포구":["당산동","대림동","도림동","문래동","신길동","양평동","여의동","영등포동"],
+    "용산구":["남영동","보광동","서빙고동","용문동","원효로동","이촌동","이태원동","청파동","한강로동","한남동","효창동","후암동"],
+    "은평구":["갈현동","구산동","녹번동","대조동","불광동","수색동","신사동","역촌동","응암동","증산동","진관동"],
+    "종로구":["가회동","교남동","무악동","부암동","사직동","삼청동","숭인동","이화동","종로동","창신동","청운효자동","평창동","혜화동"],
+    "중구":["광희동","다산동","동화동","명동","소공동","신당동","약수동","을지로동","장충동","중림동","청구동","필동","황학동","회현동"],
+    "중랑구":["망우동","면목동","묵동","상봉동","신내동","중화동"]
+  }</script>
   <script src="/script.js" defer></script>
 </body>
 </html>
