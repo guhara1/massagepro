@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://guhara1.github.io/massagepro/sitemap.xml
+Sitemap: https://massagepro-cpt.pages.dev/sitemap.xml
