@@ -70,6 +70,10 @@
       return item&&typeof item==="object"&&item.slug?item.slug:"";
     }
 
+    function joinPath(){
+      return Array.prototype.slice.call(arguments).filter(Boolean).join("/").replace(/\/+/g,"/");
+    }
+
     function render(name, shouldScroll){
       var dongs=getItems(name);
       var districtSlug=getSlug(name);
@@ -83,7 +87,7 @@
         chip.textContent=dongName;
         if(prefix&&dongSlug){
           chip.className="dong-chip-link";
-          chip.href=prefix+districtSlug+"/"+dongSlug+"/";
+          chip.href=joinPath(prefix,districtSlug,dongSlug)+"/";
           chip.setAttribute("aria-label",dongName+" 출장마사지 "+itemLabel+" 페이지로 이동");
         }
         resultList.appendChild(chip);
@@ -91,7 +95,7 @@
       if(prefix){
         var pageLink=document.createElement("a");
         pageLink.className="dong-page-link";
-        pageLink.href=prefix+districtSlug+"/";
+        pageLink.href=joinPath(prefix,districtSlug)+"/";
         pageLink.textContent=pageLinkTemplate.replace("{name}",name).replace("{label}",itemLabel);
         resultList.appendChild(pageLink);
       }
@@ -115,7 +119,8 @@
     actions.querySelectorAll("a").forEach(function(link){
       var href=link.getAttribute("href")||"";
       districts.forEach(function(name){
-        if(href.indexOf("/"+getSlug(name)+"/")>-1){bindAction(link,name);}
+        var slug=getSlug(name);
+        if((slug&&href.indexOf("/"+slug+"/")>-1)||(!slug&&link.textContent.trim()===name)){bindAction(link,name);}
       });
     });
 
@@ -124,7 +129,7 @@
       if(prefix){
         var link=document.createElement("a");
         link.textContent=name;
-        link.href=prefix+getSlug(name)+"/";
+        link.href=joinPath(prefix,getSlug(name))+"/";
         bindAction(link,name);
         actions.appendChild(link);
       }else{

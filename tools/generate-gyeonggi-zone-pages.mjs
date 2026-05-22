@@ -76,7 +76,11 @@ function zoneType(city, zone) {
 }
 
 function nearbyZones(city, zone) {
-  return city.zones.filter(item => item !== zone).slice(0, 5).join("·");
+  return city.zones
+    .filter(item => item.name !== zone)
+    .slice(0, 5)
+    .map(item => item.name)
+    .join("·");
 }
 
 function jsonLd(city, zone, slug, image, url) {
