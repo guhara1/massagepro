@@ -66,6 +66,7 @@
       });
     }
     districts.forEach(function(name){
+      if(actions.querySelector('[data-district="'+name+'"], a[href="'+(explorer.getAttribute("data-link-prefix")||"")+getSlug(name)+'/"]')){return;}
       var href=explorer.getAttribute("data-link-prefix");
       if(href){
         var link=document.createElement("a");
