@@ -424,6 +424,38 @@ summary span{color:var(--gold);font-weight:950}
 .info-list li{padding:14px 16px;border-radius:8px;border:1px solid rgba(230,200,135,.12);background:rgba(255,255,255,.03);color:#dedee5;line-height:1.72}
 .related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .related-links a{border:1px solid rgba(230,200,135,.2);border-radius:999px;padding:10px 13px;color:#f5ead6;background:rgba(255,255,255,.035);font-size:13px;font-weight:750}
+.internal-links{
+  max-width:900px;
+  margin-top:24px;
+  padding:26px;
+  border-radius:12px;
+  border:1px solid rgba(230,200,135,.15);
+  background:
+    radial-gradient(circle at 0 0,rgba(230,200,135,.1),transparent 32%),
+    linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.016));
+}
+.internal-links h2{
+  font-size:22px;
+  margin-bottom:14px;
+  font-weight:950;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.internal-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.internal-link-grid a{
+  display:block;
+  min-height:96px;
+  padding:16px;
+  border-radius:8px;
+  border:1px solid rgba(230,200,135,.12);
+  background:rgba(255,255,255,.03);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.internal-link-grid a:hover{transform:translateY(-2px);border-color:rgba(230,200,135,.34);background:rgba(230,200,135,.055)}
+.internal-link-grid strong{display:block;color:#f7e6bd;font-size:15px;line-height:1.45;margin-bottom:7px}
+.internal-link-grid span{display:block;color:#cfcfd8;font-size:13.5px;line-height:1.65}
 .cta-band{padding:92px 24px;background:var(--grad-soft);border-top:1px solid var(--line)}
 .cta-inner{max-width:960px;margin:0 auto;text-align:center}
 .cta-inner h2{font-size:clamp(32px,4vw,52px);margin:12px 0 28px}
@@ -465,6 +497,7 @@ summary span{color:var(--gold);font-weight:950}
   .pricing-grid{grid-template-columns:1fr}
   .blog-grid{grid-template-columns:1fr}
   .article-hero{padding:24px}
+  .internal-link-grid{grid-template-columns:1fr}
   .expert-panel{grid-template-columns:1fr;padding:22px}
   .wrap{padding:78px 18px}
   .note-card{padding:22px;gap:16px}
