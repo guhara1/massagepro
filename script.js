@@ -45,8 +45,14 @@
     var data;
     try{data=JSON.parse(source.textContent||"{}");}catch(e){return;}
     var districts=Object.keys(data);
+    function getItems(name){
+      return Array.isArray(data[name])?data[name]:(data[name]&&data[name].dongs?data[name].dongs:[]);
+    }
+    function getSlug(name){
+      return data[name]&&data[name].slug?data[name].slug:encodeURIComponent(name);
+    }
     function render(name){
-      var dongs=data[name]||[];
+      var dongs=getItems(name);
       resultTitle.textContent=name+" 출장마사지 행정동";
       resultDesc.textContent="숫자로 나뉜 분동은 한 묶음으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
       resultList.innerHTML="";
@@ -64,7 +70,7 @@
       if(href){
         var link=document.createElement("a");
         link.textContent=name;
-        link.href=href+encodeURIComponent(name)+"/";
+        link.href=href+getSlug(name)+"/";
         link.setAttribute("data-district",name);
         actions.appendChild(link);
       }else{
