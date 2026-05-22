@@ -1,23 +1,27 @@
 :root{
-  --bg:#0b0b0e;
-  --surface:#13131a;
-  --surface-2:#1a1a23;
+  --bg:#08080b;
+  --surface:#141219;
+  --surface-2:#1e1823;
   --line:rgba(255,255,255,.08);
   --text:#f3f3f5;
   --muted:#a5a5ae;
   --dim:#74747f;
-  --gold:#d6b274;
-  --rose:#e9b8a7;
-  --copper:#c98a6b;
-  --grad:linear-gradient(135deg,#f4d29c 0%,#e9b8a7 45%,#c98a6b 100%);
-  --grad-soft:linear-gradient(135deg,rgba(244,210,156,.14),rgba(201,138,107,.06));
+  --gold:#e6c887;
+  --rose:#f0b8aa;
+  --copper:#b97958;
+  --plum:#3a2034;
+  --grad:linear-gradient(135deg,#fff0ba 0%,#e6c887 32%,#f0b8aa 68%,#b97958 100%);
+  --grad-soft:linear-gradient(135deg,rgba(230,200,135,.16),rgba(58,32,52,.22),rgba(185,121,88,.08));
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  background:var(--bg);
+  background:
+    radial-gradient(circle at 18% -10%,rgba(230,200,135,.09),transparent 32%),
+    radial-gradient(circle at 100% 10%,rgba(58,32,52,.28),transparent 34%),
+    var(--bg);
   color:var(--text);
   line-height:1.65;
   letter-spacing:0;
@@ -237,16 +241,30 @@ details{border:1px solid var(--line);border-radius:8px;background:var(--surface)
 summary{cursor:pointer;list-style:none;padding:20px 22px;font-weight:850;display:flex;justify-content:space-between;gap:20px}
 summary::-webkit-details-marker{display:none}
 details p{padding:0 22px 22px}
-.content-stack{max-width:880px;display:grid;gap:18px}
-.content-block{padding:26px 28px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(135deg,var(--surface),var(--surface-2))}
+.content-stack{max-width:900px;display:grid;gap:20px}
+.content-block,.expert-panel,.faq-block{
+  padding:28px 30px;
+  border:1px solid rgba(230,200,135,.13);
+  border-radius:8px;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.018)),
+    linear-gradient(135deg,var(--surface),var(--surface-2));
+  box-shadow:0 22px 60px rgba(0,0,0,.22);
+}
 .content-block h2{font-size:28px;margin-bottom:14px}
 .content-block h3{font-size:21px;margin:22px 0 10px}
 .content-block p{font-size:15px;line-height:1.86;margin:0 0 12px}
 .content-block ul{margin:12px 0 0;padding-left:20px;color:#c8c8d0;line-height:1.86;font-size:15px}
 .byline{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0;color:var(--muted);font-size:13px}
-.byline span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.03)}
+.byline span{border:1px solid rgba(230,200,135,.16);border-radius:999px;padding:7px 10px;background:rgba(230,200,135,.045)}
 .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.toc a{border:1px solid var(--line);border-radius:999px;padding:9px 12px;color:#e5e5ea;background:rgba(255,255,255,.03);font-size:13px}
+.toc a{border:1px solid rgba(230,200,135,.16);border-radius:999px;padding:9px 12px;color:#f1e8d8;background:rgba(255,255,255,.035);font-size:13px}
+.expert-panel{max-width:900px;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.expert-panel h2,.faq-block h2{font-size:24px;margin-bottom:12px}
+.expert-panel p,.faq-block p{font-size:14.5px;line-height:1.82}
+.expert-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.expert-list li{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.025);color:#d5d5dc;font-size:14px}
+.faq-block{max-width:900px;margin-top:20px}
 .cta-band{padding:92px 24px;background:var(--grad-soft);border-top:1px solid var(--line)}
 .cta-inner{max-width:960px;margin:0 auto;text-align:center}
 .cta-inner h2{font-size:clamp(32px,4vw,52px);margin:12px 0 28px}
@@ -283,6 +301,7 @@ details p{padding:0 22px 22px}
   .floating{display:none}
   .glass-card{margin:0;padding:20px}
   .cards,.area-grid,.steps,.notice-grid,.footer-wrap{grid-template-columns:1fr}
+  .expert-panel{grid-template-columns:1fr;padding:22px}
   .wrap{padding:78px 18px}
   .note-card{padding:22px;gap:16px}
   .note-num{font-size:38px}
