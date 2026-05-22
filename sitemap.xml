@@ -61,6 +61,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://massagepro-cpt.pages.dev/magazine/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://massagepro-cpt.pages.dev/guide/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
