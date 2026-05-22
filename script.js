@@ -18,6 +18,7 @@
     if("requestIdleCallback" in window){requestIdleCallback(fn,{timeout:1200});}
     else{setTimeout(fn,1);}
   }
+
   ready(function(){
     if(!("IntersectionObserver" in window)){
       document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in");});
@@ -38,51 +39,80 @@
     var dataId=explorer.getAttribute("data-source");
     var source=document.getElementById(dataId);
     var actions=explorer.querySelector("[data-dong-actions]");
+    var result=explorer.querySelector(".dong-result");
     var resultTitle=explorer.querySelector("[data-dong-title]");
     var resultDesc=explorer.querySelector("[data-dong-desc]");
     var resultList=explorer.querySelector("[data-dong-list]");
-    if(!source||!actions||!resultTitle||!resultDesc||!resultList){return;}
+    if(!source||!actions||!result||!resultTitle||!resultDesc||!resultList){return;}
+
     var data;
     try{data=JSON.parse(source.textContent||"{}");}catch(e){return;}
     var districts=Object.keys(data);
+    var prefix=explorer.getAttribute("data-link-prefix")||"";
+
     function getItems(name){
       return Array.isArray(data[name])?data[name]:(data[name]&&data[name].dongs?data[name].dongs:[]);
     }
+
     function getSlug(name){
       return data[name]&&data[name].slug?data[name].slug:encodeURIComponent(name);
     }
+
     function render(name){
       var dongs=getItems(name);
-      resultTitle.textContent=name+" 출장마사지 행정동";
-      resultDesc.textContent="숫자로 나뉜 분동은 한 묶음으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
+      resultTitle.textContent=name+" 출장마사지 통합 행정동";
+      resultDesc.textContent="숫자로 나뉜 1동, 2동, 3동은 하나의 동 이름으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
       resultList.innerHTML="";
       dongs.forEach(function(dong){
         var chip=document.createElement("span");
         chip.textContent=dong;
         resultList.appendChild(chip);
       });
-      actions.querySelectorAll("button").forEach(function(btn){
+      if(prefix){
+        var pageLink=document.createElement("a");
+        pageLink.className="dong-page-link";
+        pageLink.href=prefix+getSlug(name)+"/";
+        pageLink.textContent=name+" 지역 페이지 바로가기";
+        resultList.appendChild(pageLink);
+      }
+      result.hidden=false;
+      actions.querySelectorAll("button,a").forEach(function(btn){
         btn.classList.toggle("active",btn.getAttribute("data-district")===name);
       });
     }
+
+    function bindAction(el,name){
+      el.setAttribute("data-district",name);
+      el.addEventListener("click",function(event){
+        event.preventDefault();
+        render(name);
+      });
+    }
+
+    actions.querySelectorAll("a").forEach(function(link){
+      var href=link.getAttribute("href")||"";
+      districts.forEach(function(name){
+        if(href.indexOf("/"+getSlug(name)+"/")>-1){bindAction(link,name);}
+      });
+    });
+
     districts.forEach(function(name){
-      if(actions.querySelector('[data-district="'+name+'"], a[href="'+(explorer.getAttribute("data-link-prefix")||"")+getSlug(name)+'/"]')){return;}
-      var href=explorer.getAttribute("data-link-prefix");
-      if(href){
+      if(actions.querySelector('[data-district="'+name+'"]')){return;}
+      if(prefix){
         var link=document.createElement("a");
         link.textContent=name;
-        link.href=href+getSlug(name)+"/";
-        link.setAttribute("data-district",name);
+        link.href=prefix+getSlug(name)+"/";
+        bindAction(link,name);
         actions.appendChild(link);
       }else{
         var btn=document.createElement("button");
         btn.type="button";
         btn.textContent=name;
-        btn.setAttribute("data-district",name);
-        btn.addEventListener("click",function(){render(name);});
+        bindAction(btn,name);
         actions.appendChild(btn);
       }
     });
-    if(!explorer.getAttribute("data-link-prefix")&&districts.length){render(districts[0]);}
+
+    if(districts.length){render(districts[0]);}
   });
 })();
