@@ -48,9 +48,12 @@ function priceCards(region) {
   const rows = [
     ["타이 건식","DRY · 건식","오일 없이 스트레칭과 압 중심으로 피로 부위를 정리하는 기본 케어입니다.",["60분|80,000원","90분|100,000원","120분|120,000원"]],
     ["아로마 습식","WET · 오일","부드러운 오일 케어를 중심으로 긴장 완화와 휴식감을 높이는 코스입니다.",["60분|90,000원","90분|110,000원","120분|130,000원"]],
-    ["감성케어 오일","SIGNATURE · 오일","차분한 리듬과 섬세한 강도 조절을 중시하는 시그니처 오일 케어입니다.",["60분|100,000원","90분|120,000원","120분|140,000원"]]
+    ["감성케어 오일","SIGNATURE · 오일","차분한 리듬과 섬세한 강도 조절을 중시하는 시그니처 오일 케어입니다.",["60분|100,000원","90분|120,000원","120분|140,000원"]],
+    ["VVIP 전신케어","VVIP · 풀바디","건식과 오일 케어를 함께 고려하는 장시간 전신 코스입니다. 이용 목적과 컨디션을 먼저 확인합니다.",["60분|110,000원","90분|130,000원","120분|150,000원","150분|180,000원"],"best"],
+    ["한국인 스웨디시","KOREAN · 매니저 지정","한국인 매니저 지정 상담이 필요한 경우 안내되는 코스입니다. 세부 가능 여부는 예약 시 확인합니다.",["60분|150,000원","90분|190,000원"]],
+    ["남성 스웨디시","MEN · 남성 전용","남성 고객 전용 상담 코스입니다. 이용 목적, 선호 강도, 가능 시간대를 확인한 뒤 안내합니다.",["60분|100,000원","90분|130,000원","120분|160,000원"]]
   ];
-  return `<section class="region-panel region-price" id="pricing"><h2>${region} 출장마사지 가격표</h2><p>아래 금액은 ${region} 예약 상담 시 참고하는 기본 요금표입니다. 경기도는 이동 범위가 넓어 최종 가능 여부와 금액을 전화 상담에서 다시 확인합니다.</p><div class="pricing-grid" aria-label="${region} 출장마사지 가격표">${rows.map(([title,kicker,desc,items])=>`<article class="price-card"><p class="kicker">${kicker}</p><h2>${title}</h2><p>${desc}</p><div class="price-rows">${items.map(v=>{const [t,p]=v.split("|");return `<div><span>${t}</span><strong>${p}</strong></div>`}).join("")}</div></article>`).join("")}</div><div class="price-note"><p>${region} 지역은 세부 위치와 시간대에 따라 가능 여부가 달라질 수 있습니다. 현재 가능 시간과 최종 금액은 전화로 확인하세요.</p><a href="tel:05082024731">${phone} 요금 상담</a></div></section>`;
+  return `<section class="region-panel region-price" id="pricing"><h2>${region} 출장마사지 가격표</h2><p>아래 금액은 ${region} 예약 상담 시 참고하는 기본 요금표입니다. 경기도는 이동 범위가 넓어 최종 가능 여부와 금액을 전화 상담에서 다시 확인합니다.</p><div class="pricing-grid" aria-label="${region} 출장마사지 가격표">${rows.map(([title,kicker,desc,items,best])=>`<article class="price-card${best ? " best" : ""}">${best ? '<span class="best-badge">BEST</span>' : ""}<p class="kicker">${kicker}</p><h2>${title}</h2><p>${desc}</p><div class="price-rows">${items.map(v=>{const [t,p]=v.split("|");return `<div><span>${t}</span><strong>${p}</strong></div>`}).join("")}</div></article>`).join("")}</div><div class="price-note"><p>${region} 지역은 세부 위치와 시간대에 따라 가능 여부가 달라질 수 있습니다. 현재 가능 시간과 최종 금액은 전화로 확인하세요.</p><a href="tel:05082024731">${phone} 요금 상담</a></div></section>`;
 }
 
 function page(d) {
