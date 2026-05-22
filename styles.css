@@ -251,7 +251,16 @@ details p{padding:0 22px 22px}
     linear-gradient(135deg,var(--surface),var(--surface-2));
   box-shadow:0 22px 60px rgba(0,0,0,.22);
 }
-.content-block h2{font-size:28px;margin-bottom:14px}
+.content-block h2{
+  font-size:28px;
+  margin-bottom:14px;
+  font-weight:950;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 0 28px rgba(230,200,135,.14);
+}
 .content-block h3{font-size:21px;margin:22px 0 10px}
 .content-block p{font-size:15px;line-height:1.86;margin:0 0 12px}
 .content-block ul{margin:12px 0 0;padding-left:20px;color:#c8c8d0;line-height:1.86;font-size:15px}
@@ -260,7 +269,16 @@ details p{padding:0 22px 22px}
 .toc{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .toc a{border:1px solid rgba(230,200,135,.16);border-radius:999px;padding:9px 12px;color:#f1e8d8;background:rgba(255,255,255,.035);font-size:13px}
 .expert-panel{max-width:900px;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.expert-panel h2,.faq-block h2{font-size:24px;margin-bottom:12px}
+.expert-panel h2,.faq-block h2{
+  font-size:24px;
+  margin-bottom:12px;
+  font-weight:950;
+  background:var(--grad);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 0 24px rgba(230,200,135,.14);
+}
 .expert-panel p,.faq-block p{font-size:14.5px;line-height:1.82}
 .expert-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
 .expert-list li{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.025);color:#d5d5dc;font-size:14px}
