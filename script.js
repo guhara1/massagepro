@@ -59,7 +59,10 @@
     }
 
     function getSlug(name){
-      return data[name]&&data[name].slug?data[name].slug:encodeURIComponent(name);
+      if(data[name]&&Object.prototype.hasOwnProperty.call(data[name],"slug")){
+        return data[name].slug;
+      }
+      return encodeURIComponent(name);
     }
 
     function getDongName(item){
