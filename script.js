@@ -60,13 +60,22 @@
       });
     }
     districts.forEach(function(name){
-      var btn=document.createElement("button");
-      btn.type="button";
-      btn.textContent=name;
-      btn.setAttribute("data-district",name);
-      btn.addEventListener("click",function(){render(name);});
-      actions.appendChild(btn);
+      var href=explorer.getAttribute("data-link-prefix");
+      if(href){
+        var link=document.createElement("a");
+        link.textContent=name;
+        link.href=href+encodeURIComponent(name)+"/";
+        link.setAttribute("data-district",name);
+        actions.appendChild(link);
+      }else{
+        var btn=document.createElement("button");
+        btn.type="button";
+        btn.textContent=name;
+        btn.setAttribute("data-district",name);
+        btn.addEventListener("click",function(){render(name);});
+        actions.appendChild(btn);
+      }
     });
-    if(districts.length){render(districts[0]);}
+    if(!explorer.getAttribute("data-link-prefix")&&districts.length){render(districts[0]);}
   });
 })();

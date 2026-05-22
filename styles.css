@@ -570,8 +570,11 @@ summary span{color:var(--gold);font-weight:950}
 }
 .dong-explorer{margin-top:22px}
 .dong-actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:16px}
-.dong-actions button{
+.dong-actions button,.dong-actions a{
   min-height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   border:1px solid rgba(230,200,135,.15);
   border-radius:8px;
   background:rgba(255,255,255,.032);
@@ -581,8 +584,9 @@ summary span{color:var(--gold);font-weight:950}
   font-weight:850;
   cursor:pointer;
   transition:background .2s ease,border-color .2s ease,transform .2s ease,color .2s ease;
+  text-align:center;
 }
-.dong-actions button:hover,.dong-actions button.active{
+.dong-actions button:hover,.dong-actions button.active,.dong-actions a:hover,.dong-actions a.active{
   transform:translateY(-2px);
   border-color:rgba(230,200,135,.46);
   background:linear-gradient(135deg,rgba(230,200,135,.18),rgba(255,255,255,.035));
