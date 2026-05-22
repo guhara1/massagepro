@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff0ba"/>
+      <stop offset="0.45" stop-color="#e6c887"/>
+      <stop offset="1" stop-color="#b97958"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#08080b"/>
+  <circle cx="1020" cy="80" r="260" fill="#3a2034" opacity=".45"/>
+  <circle cx="180" cy="530" r="280" fill="#e6c887" opacity=".12"/>
+  <rect x="70" y="70" width="1060" height="490" rx="34" fill="#141219" stroke="#e6c887" stroke-opacity=".35"/>
+  <text x="110" y="160" fill="#e6c887" font-size="30" font-family="Arial, sans-serif" font-weight="700" letter-spacing="5">MASSAGE PRO · GANGNAM</text>
+  <text x="110" y="285" fill="#ffffff" font-size="78" font-family="Arial, sans-serif" font-weight="900">강남 출장마사지</text>
+  <text x="110" y="365" fill="url(#g)" font-size="54" font-family="Arial, sans-serif" font-weight="900">역삼 · 선릉 · 삼성 · 청담</text>
+  <text x="110" y="455" fill="#d8d8df" font-size="30" font-family="Arial, sans-serif">0508-202-4731 예약 상담</text>
+  <rect x="800" y="400" width="260" height="72" rx="36" fill="url(#g)"/>
+  <text x="842" y="447" fill="#151015" font-size="28" font-family="Arial, sans-serif" font-weight="900">전화 상담</text>
+</svg>

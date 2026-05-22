@@ -612,6 +612,28 @@ summary span{color:var(--gold);font-weight:950}
   font-weight:760;
 }
 .source-note{margin-top:18px;color:var(--muted);font-size:13px;line-height:1.7}
+.seo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.seo-card{
+  padding:20px;
+  border-radius:10px;
+  border:1px solid rgba(230,200,135,.14);
+  background:linear-gradient(135deg,rgba(255,255,255,.04),rgba(255,255,255,.016));
+}
+.seo-card strong{display:block;color:#f8e6b8;font-size:16px;margin-bottom:8px}
+.seo-card span{display:block;color:#d4d4dd;font-size:14px;line-height:1.7}
+.pressure-table{display:grid;gap:10px;margin-top:16px}
+.pressure-row{display:grid;grid-template-columns:140px 1fr 1fr;gap:10px;padding:14px;border-radius:10px;border:1px solid rgba(230,200,135,.12);background:rgba(255,255,255,.026)}
+.pressure-row strong{color:#f7e3b0}.pressure-row span{color:#d6d6de;font-size:14px;line-height:1.65}
+.forum-thread{display:grid;gap:14px;margin-top:16px}
+.thread-post{padding:18px;border-radius:10px;border:1px solid rgba(230,200,135,.14);background:rgba(0,0,0,.18)}
+.thread-post h3{font-size:18px;color:#f7e4b6;margin-bottom:8px}
+.thread-post p{font-size:14.5px;line-height:1.8;color:#d9d9e1}
+.thread-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;color:var(--muted);font-size:12.5px}
+.thread-meta span{border:1px solid rgba(230,200,135,.14);border-radius:999px;padding:5px 8px}
+.editor-card{display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:center}
+.editor-avatar{width:72px;height:72px;border-radius:12px;background:var(--grad);color:#151015;display:grid;place-items:center;font-weight:950;font-size:20px}
+.editor-card h3{font-size:21px;margin-bottom:8px}
+.editor-card p{font-size:15px;line-height:1.8}
 .cta-band{padding:92px 24px;background:var(--grad-soft);border-top:1px solid var(--line)}
 .cta-inner{max-width:960px;margin:0 auto;text-align:center}
 .cta-inner h2{font-size:clamp(32px,4vw,52px);margin:12px 0 28px}
@@ -660,6 +682,9 @@ summary span{color:var(--gold);font-weight:950}
   .dong-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
   .price-note{display:block}
   .price-note a{width:100%;margin-top:14px}
+  .seo-grid{grid-template-columns:1fr}
+  .pressure-row{grid-template-columns:1fr}
+  .editor-card{grid-template-columns:1fr}
   .expert-panel{grid-template-columns:1fr;padding:22px}
   .wrap{padding:78px 18px}
   .note-card{padding:22px;gap:16px}
