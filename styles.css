@@ -557,17 +557,53 @@ summary span{color:var(--gold);font-weight:950}
   text-align:center;
 }
 .region-grid a:hover{background:rgba(230,200,135,.08);border-color:rgba(230,200,135,.34)}
-.district-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:16px}
-.district-grid span{
-  padding:12px 10px;
-  border-radius:8px;
-  border:1px solid rgba(230,200,135,.12);
-  background:rgba(255,255,255,.028);
-  color:#dedee6;
+.district-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:22px}
+.district-grid span,
+.district-grid a{
+  position:relative;
+  min-height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 12px;
+  border-radius:10px;
+  border:1px solid rgba(230,200,135,.18);
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.065),rgba(255,255,255,.018)),
+    radial-gradient(circle at 20% 0%,rgba(230,200,135,.12),transparent 42%);
+  color:#f7f2e8;
   font-size:14px;
-  font-weight:750;
+  font-weight:900;
   text-align:center;
+  text-decoration:none;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 10px 28px rgba(0,0,0,.18);
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease,color .18s ease;
 }
+.district-grid a::after{
+  content:"";
+  position:absolute;
+  right:13px;
+  top:50%;
+  width:6px;
+  height:6px;
+  border-top:1px solid rgba(244,215,141,.85);
+  border-right:1px solid rgba(244,215,141,.85);
+  transform:translateY(-50%) rotate(45deg);
+  opacity:.55;
+  transition:opacity .18s ease,right .18s ease;
+}
+.district-grid a:hover,
+.district-grid a:focus-visible{
+  transform:translateY(-2px);
+  border-color:rgba(244,215,141,.56);
+  color:#fff;
+  background:
+    linear-gradient(135deg,rgba(244,215,141,.18),rgba(213,143,115,.08)),
+    linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.018));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 38px rgba(0,0,0,.34),0 0 0 3px rgba(230,200,135,.08);
+}
+.district-grid a:hover::after,
+.district-grid a:focus-visible::after{right:10px;opacity:1}
 .dong-explorer{margin-top:22px}
 .dong-actions{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:16px}
 .dong-actions button,.dong-actions a{
