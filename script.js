@@ -58,20 +58,36 @@
       return data[name]&&data[name].slug?data[name].slug:encodeURIComponent(name);
     }
 
+    function getDongName(item){
+      return typeof item==="string"?item:item.name;
+    }
+
+    function getDongSlug(item){
+      return item&&typeof item==="object"&&item.slug?item.slug:"";
+    }
+
     function render(name, shouldScroll){
       var dongs=getItems(name);
+      var districtSlug=getSlug(name);
       resultTitle.textContent=name+" 출장마사지 통합 행정동";
       resultDesc.textContent="숫자로 나뉜 1동, 2동, 3동은 하나의 동 이름으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
       resultList.innerHTML="";
       dongs.forEach(function(dong){
-        var chip=document.createElement("span");
-        chip.textContent=dong;
+        var dongName=getDongName(dong);
+        var dongSlug=getDongSlug(dong);
+        var chip=document.createElement(prefix&&dongSlug?"a":"span");
+        chip.textContent=dongName;
+        if(prefix&&dongSlug){
+          chip.className="dong-chip-link";
+          chip.href=prefix+districtSlug+"/"+dongSlug+"/";
+          chip.setAttribute("aria-label",dongName+" 출장마사지 지역 페이지로 이동");
+        }
         resultList.appendChild(chip);
       });
       if(prefix){
         var pageLink=document.createElement("a");
         pageLink.className="dong-page-link";
-        pageLink.href=prefix+getSlug(name)+"/";
+        pageLink.href=prefix+districtSlug+"/";
         pageLink.textContent=name+" 지역 페이지 바로가기";
         resultList.appendChild(pageLink);
       }
