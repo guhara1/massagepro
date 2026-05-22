@@ -48,7 +48,7 @@
     function render(name){
       var dongs=data[name]||[];
       resultTitle.textContent=name+" 출장마사지 행정동";
-      resultDesc.textContent="숫자 분동은 한 묶음으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
+      resultDesc.textContent="숫자로 나뉜 분동은 한 묶음으로 통합해 표시했습니다. 예약 상담 시에는 아래 동 이름과 가까운 기준 지점을 함께 알려주세요.";
       resultList.innerHTML="";
       dongs.forEach(function(dong){
         var chip=document.createElement("span");
