@@ -5,11 +5,13 @@
     toggle.addEventListener("click",function(){
       var open=menu.classList.toggle("open");
       toggle.setAttribute("aria-expanded",String(open));
+      toggle.setAttribute("aria-label",open?"주 메뉴 닫기":"주 메뉴 열기");
     });
     menu.querySelectorAll("a").forEach(function(link){
       link.addEventListener("click",function(){
         menu.classList.remove("open");
         toggle.setAttribute("aria-expanded","false");
+        toggle.setAttribute("aria-label","주 메뉴 열기");
       });
     });
   }

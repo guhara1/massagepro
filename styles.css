@@ -4,9 +4,9 @@
   --surface-2:#1e1823;
   --line:rgba(255,255,255,.08);
   --text:#f3f3f5;
-  --muted:#a5a5ae;
-  --dim:#74747f;
-  --gold:#e6c887;
+  --muted:#c2c2cc;
+  --dim:#aaaab5;
+  --gold:#f1d694;
   --rose:#f0b8aa;
   --copper:#b97958;
   --plum:#3a2034;
@@ -531,7 +531,7 @@ summary span{color:var(--gold);font-weight:950}
   border:1px solid rgba(230,200,135,.18);
   border-radius:999px;
   background:rgba(230,200,135,.06);
-  color:#d9c89c;
+  color:#f4dfac;
   font-size:12px;
   font-weight:800;
   line-height:1;
@@ -938,7 +938,7 @@ summary span{color:var(--gold);font-weight:950}
 }
 .footer-bottom p,.footer-bottom a{
   font-size:12px;
-  color:var(--dim);
+  color:#b9b9c4;
 }
 .mobile-callbar{
   display:none;
