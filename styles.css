@@ -15,6 +15,11 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html,body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
 body{
   margin:0;
   font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
@@ -27,6 +32,10 @@ body{
   letter-spacing:0;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
+}
+img,svg,video,canvas{max-width:100%}
+main,section,article,aside,header,footer,nav,div,p,h1,h2,h3,ul,ol,li,dl,dt,dd,a,span{
+  min-width:0;
 }
 ::selection{background:rgba(230,200,135,.28);color:#fff}
 a{color:inherit;text-decoration:none}
@@ -951,6 +960,9 @@ summary span{color:var(--gold);font-weight:950}
   .footer-wrap{grid-template-columns:1fr}
 }
 @media(max-width:720px){
+  html,body{
+    overflow-x:hidden;
+  }
   .nav{min-height:68px;padding:0 16px}
   .brand-logo-wrap{width:62px;height:42px}
   .menu{top:68px}
@@ -963,6 +975,29 @@ summary span{color:var(--gold);font-weight:950}
       linear-gradient(160deg,#09090c 0%,#110e14 48%,#050507 100%);
   }
   .hero-inner{padding:22px 12px 34px;gap:14px}
+  .hero-inner,
+  .hero-copy,
+  .booking-card,
+  .wrap,
+  .content-stack,
+  .content-block,
+  .section-head,
+  .region-panel,
+  .expert-panel,
+  .faq-block,
+  .article-hero,
+  .price-card,
+  .blog-card,
+  .note-card,
+  .notice,
+  .area-card,
+  .step,
+  .footer-wrap,
+  .footer-bottom{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
   .luxury-hero .hero-copy{
     padding:22px 18px 20px;
     border-radius:18px;
@@ -1064,7 +1099,86 @@ summary span{color:var(--gold);font-weight:950}
   .pressure-row{grid-template-columns:1fr}
   .editor-card{grid-template-columns:1fr}
   .expert-panel{grid-template-columns:1fr;padding:22px}
-  .wrap{padding:78px 18px}
+  .wrap{
+    padding:58px 10px;
+    overflow-x:hidden;
+  }
+  .content-stack{gap:18px}
+  .content-block,
+  .expert-panel,
+  .faq-block,
+  .region-panel,
+  .article-hero{
+    padding:22px 16px;
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .content-block h2,
+  .region-panel h2,
+  .faq-block h2,
+  .article-hero h1,
+  .section-head h1,
+  .section-head h2{
+    max-width:100%;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  .content-block h2,
+  .region-panel h2,
+  .faq-block h2{
+    font-size:clamp(24px,7.1vw,32px);
+    line-height:1.22;
+  }
+  .content-block p,
+  .region-panel p,
+  .faq-block p,
+  .section-head p,
+  .article-hero p,
+  .price-card p,
+  .blog-card p{
+    max-width:100%;
+    overflow-wrap:anywhere;
+    word-break:normal;
+    line-height:1.82;
+  }
+  .district-grid,
+  .region-grid,
+  .dong-actions,
+  .pricing-grid,
+  .blog-grid,
+  .cards,
+  .area-grid,
+  .notice-grid,
+  .steps,
+  .seo-grid,
+  .internal-link-grid{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  .district-grid a,
+  .district-grid span,
+  .region-grid a,
+  .region-chip,
+  .dong-actions a,
+  .dong-actions button,
+  .toc a,
+  .byline span,
+  .article-meta span{
+    min-width:0;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    text-align:center;
+  }
+  .price-card{padding:22px 18px}
+  .price-rows div{
+    gap:10px;
+    align-items:flex-start;
+  }
+  .price-rows strong{
+    text-align:right;
+    white-space:nowrap;
+  }
   .note-card{padding:22px;gap:16px}
   .note-num{font-size:38px}
   .footer-bottom{display:block}
