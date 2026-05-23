@@ -940,6 +940,9 @@ summary span{color:var(--gold);font-weight:950}
   font-size:12px;
   color:var(--dim);
 }
+.mobile-callbar{
+  display:none;
+}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .75s ease,transform .75s ease}
 .reveal.in{opacity:1;transform:none}
 #area,#process,#notice,#faq,.cta-band,.site-footer{content-visibility:auto;contain-intrinsic-size:auto 700px}
@@ -962,6 +965,9 @@ summary span{color:var(--gold);font-weight:950}
 @media(max-width:720px){
   html,body{
     overflow-x:hidden;
+  }
+  body{
+    padding-bottom:86px;
   }
   .nav{min-height:68px;padding:0 16px}
   .brand-logo-wrap{width:62px;height:42px}
@@ -1182,6 +1188,43 @@ summary span{color:var(--gold);font-weight:950}
   .note-card{padding:22px;gap:16px}
   .note-num{font-size:38px}
   .footer-bottom{display:block}
+  .mobile-callbar{
+    position:fixed;
+    z-index:50;
+    left:12px;
+    right:12px;
+    bottom:calc(12px + env(safe-area-inset-bottom));
+    min-height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    border:1px solid rgba(255,240,186,.45);
+    border-radius:16px;
+    background:var(--grad);
+    color:#151015;
+    font-weight:950;
+    box-shadow:0 18px 50px rgba(0,0,0,.48),0 0 0 1px rgba(255,255,255,.25) inset;
+  }
+  .mobile-callbar::before{
+    content:"";
+    width:10px;
+    height:10px;
+    border-radius:999px;
+    background:#151015;
+    box-shadow:0 0 0 6px rgba(21,16,21,.12);
+  }
+  .mobile-callbar span{
+    font-size:13px;
+    letter-spacing:.04em;
+  }
+  .mobile-callbar strong{
+    font-size:18px;
+    letter-spacing:0;
+  }
+}
+@media(min-width:721px){
+  .mobile-callbar{display:none!important}
 }
 @media(hover:none){.glass-card{backdrop-filter:none}}
 @media(prefers-reduced-motion:reduce){
