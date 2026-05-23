@@ -1,12 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <defs>
-    <linearGradient id="g" x1="18" y1="16" x2="110" y2="112" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f4d29c"/>
-      <stop offset=".48" stop-color="#e9b8a7"/>
-      <stop offset="1" stop-color="#c98a6b"/>
+    <linearGradient id="gold" x1="10" y1="8" x2="118" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffe7ad"/>
+      <stop offset=".48" stop-color="#e9bd77"/>
+      <stop offset="1" stop-color="#b98037"/>
     </linearGradient>
+    <linearGradient id="panel" x1="18" y1="18" x2="112" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#211d23"/>
+      <stop offset="1" stop-color="#08080b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity=".45"/>
+    </filter>
   </defs>
-  <rect width="128" height="128" rx="24" fill="#0b0b0e"/>
-  <rect x="12" y="12" width="104" height="104" rx="20" fill="url(#g)"/>
-  <text x="64" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="900" fill="#171014">MP</text>
+  <rect width="128" height="128" rx="25" fill="#050506"/>
+  <rect x="8" y="8" width="112" height="112" rx="22" fill="url(#panel)" stroke="url(#gold)" stroke-width="5"/>
+  <path d="M24 93c11-12 19-18 31-18 9 0 14 4 21 4 9 0 15-5 28-18" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+  <text x="64" y="58" text-anchor="middle" dominant-baseline="middle" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="34" font-weight="900" letter-spacing="-3" fill="url(#gold)" filter="url(#shadow)">마사지</text>
+  <text x="64" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="900" letter-spacing="1.2" fill="#fff3d0">PRO</text>
 </svg>
