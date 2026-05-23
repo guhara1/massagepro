@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://massagepro-cpt.pages.dev/sitemap.xml
+Sitemap: https://massagepro.club/sitemap.xml
