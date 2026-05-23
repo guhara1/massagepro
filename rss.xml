@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>마사지PRO 블로그</title>
+    <link>https://massagepro.club/magazine/blog/</link>
+    <description>마사지PRO의 마사지 코스 비교, 예약 전 체크리스트, 홈케어와 휴식 관리 정보입니다.</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Fri, 22 May 2026 09:00:00 +0900</lastBuildDate>
+    <atom:link href="https://massagepro.club/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>홈타이 처음 이용 가이드</title>
+      <link>https://massagepro.club/magazine/blog/home-thai-guide/</link>
+      <guid isPermaLink="true">https://massagepro.club/magazine/blog/home-thai-guide/</guid>
+      <pubDate>Fri, 22 May 2026 09:00:00 +0900</pubDate>
+      <description>처음 이용하는 분이 불안하지 않도록 홈타이 예약 흐름과 준비 사항을 현실적으로 정리했습니다.</description>
+    </item>
+    <item>
+      <title>마사지 후 관리법</title>
+      <link>https://massagepro.club/magazine/blog/after-massage-care/</link>
+      <guid isPermaLink="true">https://massagepro.club/magazine/blog/after-massage-care/</guid>
+      <pubDate>Fri, 15 May 2026 09:00:00 +0900</pubDate>
+      <description>수분 섭취, 샤워, 운동, 휴식 타이밍처럼 마사지 후 만족도를 좌우하는 관리 기준을 안내합니다.</description>
+    </item>
+    <item>
+      <title>목·어깨 피로를 줄이는 생활 관리</title>
+      <link>https://massagepro.club/magazine/blog/neck-shoulder-stretch/</link>
+      <guid isPermaLink="true">https://massagepro.club/magazine/blog/neck-shoulder-stretch/</guid>
+      <pubDate>Fri, 08 May 2026 09:00:00 +0900</pubDate>
+      <description>오래 앉아 있는 날에 부담을 줄이는 가벼운 움직임과 휴식 루틴을 안내합니다.</description>
+    </item>
+    <item>
+      <title>출장마사지 예약 전 체크리스트</title>
+      <link>https://massagepro.club/magazine/blog/booking-checklist/</link>
+      <guid isPermaLink="true">https://massagepro.club/magazine/blog/booking-checklist/</guid>
+      <pubDate>Fri, 01 May 2026 09:00:00 +0900</pubDate>
+      <description>지역, 시간, 코스, 컨디션, 주의 사항을 상담 전에 차분히 확인하는 기준입니다.</description>
+    </item>
+    <item>
+      <title>타이 마사지와 아로마 마사지 차이</title>
+      <link>https://massagepro.club/magazine/blog/thai-vs-aroma/</link>
+      <guid isPermaLink="true">https://massagepro.club/magazine/blog/thai-vs-aroma/</guid>
+      <pubDate>Fri, 24 Apr 2026 09:00:00 +0900</pubDate>
+      <description>압, 스트레칭, 오일 사용 여부를 기준으로 나에게 맞는 코스를 고르는 법을 정리했습니다.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,4 +1,20 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
 Sitemap: https://massagepro.club/sitemap.xml
+Sitemap: https://massagepro.club/rss.xml
