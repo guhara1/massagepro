@@ -119,6 +119,7 @@
     function bindAction(el,name){
       el.setAttribute("data-district",name);
       el.addEventListener("click",function(event){
+        if(el.tagName==="A"&&el.getAttribute("href")){return;}
         event.preventDefault();
         render(name,true);
       });
@@ -149,6 +150,7 @@
       }
     });
 
-    if(districts.length){render(districts[0],false);}
+    var hasNavLink=!!actions.querySelector('a[href]');
+    if(districts.length&&!hasNavLink){render(districts[0],false);}
   });
 })();
