@@ -1232,3 +1232,60 @@ summary span{color:var(--gold);font-weight:950}
   .marquee-track,.pulse{animation:none!important}
   .reveal{opacity:1!important;transform:none!important}
 }
+
+/* ===== Hero brand visual (right side) — added for all-region hero image ===== */
+.hero-figure{
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.hero-figure img{
+  width:100%;
+  height:auto;
+  max-width:420px;
+  filter:drop-shadow(0 18px 46px rgba(0,0,0,.55)) drop-shadow(0 0 26px rgba(230,200,135,.14));
+  animation:heroFloat 7s ease-in-out infinite;
+}
+@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+/* Article hero becomes two-column with brand visual pinned right */
+.article-hero.has-hero-media{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(220px,30%,400px);
+  column-gap:42px;
+  align-items:center;
+}
+.article-hero.has-hero-media>:not(.hero-figure){grid-column:1}
+.article-hero.has-hero-media>.hero-figure{
+  grid-column:2;
+  grid-row:1 / 999;
+  align-self:center;
+}
+/* Main page hero right column: brand visual stacked above booking card */
+.hero-side{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+  align-items:stretch;
+}
+.hero-figure--home img{max-width:360px;margin:0 auto}
+@media(max-width:880px){
+  .article-hero.has-hero-media{grid-template-columns:1fr}
+  .article-hero.has-hero-media>.hero-figure{grid-column:1;grid-row:auto;order:-1;margin-bottom:6px}
+  .hero-figure img,.article-hero.has-hero-media>.hero-figure img{max-width:300px}
+}
+@media(max-width:560px){
+  .hero-figure img{max-width:240px}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-figure img{animation:none!important}
+}
+/* ===== Long-tail internal link grid (region pages) ===== */
+.longtail-links{margin-top:26px}
+.longtail-links .internal-link-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:760px){
+  .longtail-links .internal-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){
+  .longtail-links .internal-link-grid{grid-template-columns:1fr}
+}
